@@ -6,8 +6,7 @@ import Link from 'next/link';
 import { Button } from './ui/button';
 
 const IsOnTelegram = ({ children }: { children: React.ReactNode }) => {
-  const { user, webApp } = useTelegram();
-  if (!webApp && !user) redirect('/');
+  const { user } = useTelegram();
 
   return (
     <div>
