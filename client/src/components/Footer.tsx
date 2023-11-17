@@ -18,7 +18,7 @@ const Footer = () => {
         <p>
           Waiter X.
           <br />
-          Providing reliable tech since 1992
+          Providing reliable tech since 2023
         </p>
       </aside>
       <nav>
