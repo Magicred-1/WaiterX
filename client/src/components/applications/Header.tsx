@@ -2,14 +2,19 @@
 
 import { useTelegram } from '../TelegramContext';
 import { Web3Button } from '@web3modal/react';
+import Image from 'next/image';
 
 const Header = () => {
   const { user } = useTelegram();
   return (
     <div className='p-4 flex items-center justify-between bg-slate-800'>
-      <div className='rounded-full p-4 text-lg text-white bg-slate-400'>
-        {user?.username.slice(0, 2).toUpperCase()}
-      </div>
+        <Image
+          src='https://noun-api.com/beta/pfp'
+          alt='logo'
+          width={50}
+          height={50}
+          className='rounded-full'
+        />
       <Web3Button />
     </div>
   );
