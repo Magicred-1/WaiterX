@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Web3Modal } from '@/components/Web3Modal';
-import { TelegramProvider } from '@/components/TelegramContext';
+import { Web3Modal, TelegramProvider } from '@/components';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
