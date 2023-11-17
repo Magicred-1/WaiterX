@@ -17,7 +17,7 @@ const HeroSection = () => {
             to maximize your trading revenues on every crypto currencies
           </p>
 
-          <Link href='/applications'>
+          <Link href='https://t.me/waiter_x_bot'>
             <Button
               variant='secondary'
               className='h-10 w-[250px] rounded-md mt-8'

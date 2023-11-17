@@ -28,7 +28,7 @@ const Navbar = () => {
 
           <div className='hidden md:flex gap-6'>
             <Link
-              href='/applications'
+              href='https://t.me/waiter_x_bot'
               className={`text-xl hover:text-[#4457FF] duration-300 ease-in-out ${
                 pathname === '/leaderboard' && 'text-[#4457FF]'
               }`}
@@ -92,7 +92,7 @@ const Navbar = () => {
             <div className='flex flex-col justify-between h-full w-full'>
               <div className='flex flex-col gap-6 mt-8'>
                 <Link
-                  href='/applications'
+                  href='https://t.me/waiter_x_bot'
                   className={`text-xl hover:text-[#4457FF] duration-300 ease-in-out ${
                     pathname === '/leaderboard' && 'text-[#4457FF]'
                   }`}
@@ -117,11 +117,14 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              <div className='flex flex-col gap-4 mt-8'>
-                <Button variant='secondary' className='h-10 rounded-md'>
+              <Link href='https://t.me/waiter_x_bot' className='w-full'>
+                <Button
+                  variant='secondary'
+                  className='h-10 w-full rounded-md mt-8'
+                >
                   Start your journey
                 </Button>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

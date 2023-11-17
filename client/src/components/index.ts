@@ -5,6 +5,8 @@ import Footer from './Footer';
 import QuestionAndAnswer from './Q&A';
 import HeroSection from './HeroSection';
 
+import IsOnTelegram from './IsOnTelegram';
+
 export {
   Navbar,
   Footer,
@@ -12,4 +14,5 @@ export {
   Web3Modal,
   QuestionAndAnswer,
   HeroSection,
+  IsOnTelegram,
 };
