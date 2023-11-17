@@ -1,7 +1,5 @@
 'use client';
-import { redirect } from 'next/navigation';
 import { useTelegram } from './TelegramContext';
-import { HeroSection } from '.';
 import Link from 'next/link';
 import { Button } from './ui/button';
 

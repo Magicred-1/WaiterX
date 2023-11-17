@@ -11,6 +11,8 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@web3modal/ethereum": "^2.7.1",
+    "@web3modal/react": "^2.7.1",
     "@web3modal/wagmi": "^3.3.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",

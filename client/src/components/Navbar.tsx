@@ -55,18 +55,11 @@ const Navbar = () => {
         </div>
 
         <div className='hidden xl:flex gap-6 items-center'>
-          <Link
-            href='/leaderboard'
-            className={`text-xl hover:text-[#4457FF] duration-300 ease-in-out ${
-              pathname === '/leaderboard' && 'text-[#4457FF]'
-            }`}
-          >
-            Documentation
+          <Link href='https://t.me/waiter_x_bot' className='w-full'>
+            <Button variant='secondary' className='h-10 w-full rounded-md mt-8'>
+              Start your journey
+            </Button>
           </Link>
-
-          <Button variant='secondary' className='h-10 rounded-md'>
-            Buy fundz
-          </Button>
         </div>
 
         <div className='xl:hidden flex gap-6 items-center'>

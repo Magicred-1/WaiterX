@@ -1,5 +1,5 @@
 import { TelegramProvider } from './TelegramContext';
-import { Web3Modal } from './Web3Modal';
+import { Web3ModalProvider } from './Web3Modal';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import QuestionAndAnswer from './Q&A';
@@ -11,7 +11,7 @@ export {
   Navbar,
   Footer,
   TelegramProvider,
-  Web3Modal,
+  Web3ModalProvider,
   QuestionAndAnswer,
   HeroSection,
   IsOnTelegram,
