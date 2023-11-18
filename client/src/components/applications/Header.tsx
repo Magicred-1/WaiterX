@@ -16,6 +16,7 @@ const Header = () => {
   const { user } = useTelegram();
   const [modal, setModal] = useState(false);
   const [wallet, setWallet] = useAtom(generatedUserWallet);
+  const [isUsingGeneratedWallet, setIsUsingGeneratedWallet] = useState(false);
 
   const { address, isConnecting, isDisconnected } = useAccount();
 
@@ -45,7 +46,7 @@ const Header = () => {
         <Button onClick={() => setModal(!modal)}>Connect Wallet</Button>
       )}
 
-      {modal && (
+      {modal && !isUsingGeneratedWallet && (
         <>
           <div
             className='absolute items-center bg-black/30 w-full h-screen top-0 left-0'
@@ -55,7 +56,12 @@ const Header = () => {
             className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
              flex flex-col items-center rounded-lg bg-white p-4 text-black'
           >
-            <div onClick={() => setModal(false)}>
+            <div
+              onClick={() => {
+                setIsUsingGeneratedWallet(false);
+                setModal(false);
+              }}
+            >
               <Web3Button />
             </div>
             <span className='my-4 font-bold'>Or</span>
@@ -67,6 +73,7 @@ const Header = () => {
                   const telegramUserWallet = await getUserWallet(user?.id);
                   setWallet(telegramUserWallet);
                 }
+                setIsUsingGeneratedWallet(true);
                 setModal(false);
               }}
             >
@@ -74,6 +81,27 @@ const Header = () => {
             </button>
           </div>
         </>
+      )}
+      {modal && isUsingGeneratedWallet && (
+        <div
+          className='absolute items-center bg-black/30 w-full h-screen top-0 left-0'
+          onClick={() => setModal(false)}
+        >
+          <div
+            className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+             flex flex-col items-center rounded-lg bg-white p-4 text-black'
+          >
+            <button
+              className='bg-blue-400 font-bold text-white rounded-xl px-4 py-2'
+              onClick={async () => {
+                setIsUsingGeneratedWallet(false);
+                setModal(false);
+              }}
+            >
+              Disconnect
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
