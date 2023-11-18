@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Header, Card, MenuBar } from '@/components/applications';
+import { Card } from '@/components/applications';
 
-const HeroSection = () => {
+const page = async () => {
   return (
     <div>
       <section className='flex flex-col'>
-        <Link href='/'>
+        <Link href='/applications/wallet'>
           <Image
             src='/herobanner.png'
             alt='herobanner'
@@ -24,12 +24,12 @@ const HeroSection = () => {
         <div className='grid grid-cols-2 gap-4 mt-4'>
           <Card title='Transfer fund' image='/arrow-icon.png' />
           <Card title='Donation' image='/bourse-icon.png' />
-          <Card title='Coming soon...' image='/bourse-icon.png' />
-          <Card title='Coming soon...' image='/bourse-icon.png' />
+          <Card title='Auction' image='/courbe-icon.png' />
+          <Card title='Coming soon...' image='/profile-icon.png' />
         </div>
       </section>
     </div>
   );
 };
 
-export default HeroSection;
+export default page;

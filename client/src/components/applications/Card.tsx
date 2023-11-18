@@ -9,7 +9,7 @@ interface CardProps {
 
 const Card = ({ title, image }: CardProps) => {
   return (
-    <div className='max-w-xs bg-black rounded-lg shadow text-black flex flex-col'>
+    <div className='max-w-xs bg-black rounded-lg shadow text-black flex flex-col min-h-[150px] justify-between'>
       <div className='flex justify-center items-center pt-8'>
         <Image src={image} alt='image' width={50} height={50} />
       </div>

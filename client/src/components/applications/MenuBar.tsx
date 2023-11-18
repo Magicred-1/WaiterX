@@ -20,7 +20,7 @@ const MenuBar = () => {
           <IoIosApps className='text-2xl text-white' />
         </Link>
         <Link
-          href='/hystory'
+          href='/applications'
           className='rounded-full bg-slate-600 p-3 hover:scale-105'
         >
           <IoMdSettings className='text-2xl text-white hover:scale-105' />

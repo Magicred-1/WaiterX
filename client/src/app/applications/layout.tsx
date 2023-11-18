@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Footer, IsOnTelegram } from '@/components';
+import { IsOnTelegram } from '@/components';
 import { Header, MenuBar } from '@/components/applications';
 
 export const metadata: Metadata = {
