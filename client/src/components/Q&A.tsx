@@ -19,27 +19,31 @@ const QuestionAndAnswer = () => {
 
       <Accordion type='single' collapsible className='my-12'>
         <AccordionItem value='item-1'>
-          <AccordionTrigger>1. How does Waiter X facilitate managing my cryptocurrencies via Telegram?</AccordionTrigger>
+          <AccordionTrigger>
+            1. How will WaiterX help me handle my crypto ?
+          </AccordionTrigger>
           <AccordionContent>
-            Waiter X is designed to simplify managing your cryptocurrencies directly through Telegram.
-            You can either create a new wallet or import an existing one using a few simple steps on your phone.
-            This integration allows you to handle your digital assets without leaving Telegram or toggling between different platforms and blockchains.
+            WaiterX streamlines crypto management in Telegram, you can create or
+            import wallets and manage your assets without switching apps
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value='item-2'>
-          <AccordionTrigger>2. Can I perform interchain cryptocurrency transfers with Waiter X?</AccordionTrigger>
+          <AccordionTrigger>
+            2. Can WaiterX transfer crypto between networks?
+          </AccordionTrigger>
           <AccordionContent>
-            Yes, Waiter X supports interchain transfers through the integration of Hyperlane.
-            This allows you to seamlessly and securely transfer cryptocurrencies across different blockchains.
-            This feature makes interchain exchanges accessible and convenient, right from your Telegram application.
+            Yes waiterX can do it With hyperlane directly from your telegram
+            app.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value='item-3'>
-          <AccordionTrigger>3. How does Waiter X ensure the best pricing for cryptocurrency swaps?</AccordionTrigger>
+          <AccordionTrigger>
+            3. Will waiterX get me the best rates?
+          </AccordionTrigger>
           <AccordionContent>
-            Waiter X utilizes the Cow Protocol to ensure you get the best prices when swapping cryptocurrencies.
-            The protocol searches and compares prices across various exchange platforms to offer you the most advantageous rate.
-            This integration allows for efficient and cost-effective swaps without having to leave the Telegram interface.
+            Waiter X gets you the best swap rates by automatically comparing
+            prices across all platforms with cow protocol all directly in your
+            telegram
           </AccordionContent>
         </AccordionItem>
       </Accordion>

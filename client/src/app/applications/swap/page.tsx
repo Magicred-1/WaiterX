@@ -8,18 +8,17 @@ import {
   TradeType,
 } from '@cowprotocol/widget-react';
 
-const page = () => {
+const Page = () => {
   const provider = useProvider();
 
-
-  const params: CowSwapWidgetParams | null  = useMemo(() => {
+  const params: CowSwapWidgetParams | null = useMemo(() => {
     if (!provider) {
       return null;
     }
     return {
       appCode: 'My Cool App', // Name of your app (max 50 characters)
-      width: '450px', // Width in pixels (or 100% to use all available space)
-      height: '640px',
+      width: '100%', // Width in pixels (or 100% to use all available space)
+      height: '100%',
       provider: provider, // Ethereum EIP-1193 provider. For a quick test, you can pass `window.ethereum`, but consider using something like https://web3modal.com
       chainId: 1, // 1 (Mainnet), 5 (Goerli), 100 (Gnosis)
       tradeType: TradeType.SWAP, // TradeType.SWAP, TradeType.LIMIT or TradeType.ADVANCED
@@ -42,7 +41,7 @@ const page = () => {
       theme: 'dark', // light/dark or provide your own color palette
       interfaceFeeBips: '50', // Fill the form above if you are interested
     };
-  }, [provider])
+  }, [provider]);
 
   if (!params) {
     return <div></div>;
@@ -55,4 +54,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -12,9 +12,9 @@ const HeroSection = () => {
           </h1>
 
           <p className='lg:w-[768px] text-center mt-8 md:text-xl text-lg lg:mx-0 sm:mx-8 mx-4'>
-            We provide funded{' '}
-            <span className='text-[#4457FF]'>on chain accounts </span>
-            to maximize your trading revenues on every crypto currencies
+            Making WEB3 accesible for Humankind
+            <span className='text-[#4457FF]'>All in One wallet </span>
+            modular telegram web app
           </p>
 
           <Link href='https://t.me/waiter_x_bot'>
