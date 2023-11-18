@@ -7,9 +7,10 @@ import { useEffect, useState } from 'react';
 import { Web3Button } from '@web3modal/react';
 
 import { useAccount } from 'wagmi';
-import { addUser } from '@/lib/wallet.action';
+import { addUser, getUserWallet } from '@/lib/wallet.action';
 import { useAtom } from 'jotai';
 import { generatedUserWallet } from '@/lib/context';
+import { shortenAddress } from '@/lib/utils';
 
 const Header = () => {
   const { user } = useTelegram();
@@ -36,6 +37,10 @@ const Header = () => {
       />
       {address ? (
         <Web3Button />
+      ) : wallet ? (
+        <Button onClick={() => setModal(!modal)}>
+          {shortenAddress(wallet.publicKey)}
+        </Button>
       ) : (
         <Button onClick={() => setModal(!modal)}>Connect Wallet</Button>
       )}
@@ -57,9 +62,12 @@ const Header = () => {
 
             <button
               className='bg-blue-400 font-bold text-white rounded-xl px-4 py-2'
-              onClick={() => {
+              onClick={async () => {
+                if (user?.id) {
+                  const telegramUserWallet = await getUserWallet(user?.id);
+                  setWallet(telegramUserWallet);
+                }
                 setModal(false);
-                // setWallet();
               }}
             >
               Generate wallet
