@@ -38,7 +38,7 @@ const Header = () => {
       />
       {address ? (
         <Web3Button />
-      ) : wallet ? (
+      ) : wallet?.publicKey && isUsingGeneratedWallet ? (
         <Button onClick={() => setModal(!modal)}>
           {shortenAddress(wallet.publicKey)}
         </Button>
@@ -77,7 +77,7 @@ const Header = () => {
                 setModal(false);
               }}
             >
-              Generate wallet
+              Generated wallet
             </button>
           </div>
         </>
