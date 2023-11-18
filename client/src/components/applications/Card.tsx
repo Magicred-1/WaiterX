@@ -5,9 +5,10 @@ import React from 'react';
 interface CardProps {
   title: string;
   image: string;
+  path: string;
 }
 
-const Card = ({ title, image }: CardProps) => {
+const Card = ({ title, image, path}: CardProps) => {
   return (
     <div className='max-w-xs bg-black rounded-lg shadow text-black flex flex-col min-h-[150px] justify-between'>
       <div className='flex justify-center items-center pt-8'>
@@ -16,7 +17,7 @@ const Card = ({ title, image }: CardProps) => {
 
       <div className='p-5'>
         <Link
-          href='/get-funded-account'
+          href={path}
           className='flex justify-center h-10 items-center w-full text-center text-sm font-medium
         bg-white hover:bg-white/40 duration-300 ease-in-out rounded-lg'
         >
