@@ -5,8 +5,6 @@ import prisma from './client';
 import { ITelegramUser } from './types';
 
 export async function addUser(telegramUser: ITelegramUser) {
-  console.log('here');
-
   const userExists = await prisma.user.findUnique({
     where: {
       telegramId: telegramUser.id,
@@ -32,6 +30,20 @@ export async function addUser(telegramUser: ITelegramUser) {
       },
     },
   });
-  console.log('user', user);
+
   return user;
+}
+
+export async function getUserWallet(telegramId: number) {
+  const telegramUser = await prisma.user.findUnique({
+    where: {
+      telegramId,
+    },
+  });
+  const telegramUserWallet = await prisma.wallet.findUnique({
+    where: {
+      userId: telegramUser?.id,
+    },
+  });
+  return telegramUserWallet;
 }
