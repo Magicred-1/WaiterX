@@ -32,11 +32,10 @@ With the ability to create a wallet, send and receive ETH and tokens, bridge to 
    ```sh
    git clone https://github.com/Magicred-1/WaiterX/
 
-  ```
-   Install the dependencies using yarn
-  ```
+Install the dependencies using yarn
+```
     yarn install
-  ```
+```
 Usage
 To use the application, create a telegram bot and setup the webhook to the server (it must be https) and run the following commands:
 ```
