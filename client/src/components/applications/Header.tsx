@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <div className='p-4 flex items-center justify-between bg-slate-800'>
       <Image
-        src='https://noun-api.com/beta/pfp'
+        src={`${address ? `https://noun-api.com/beta/pfp?name=${address}`: 'https://noun-api.com/beta/pfp'}`}
         alt='logo'
         width={50}
         height={50}
