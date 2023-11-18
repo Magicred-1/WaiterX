@@ -3,6 +3,7 @@
 import Script from 'next/script';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import type { ITelegramUser, IWebApp } from '@/lib/types';
+import { Wallet } from '@prisma/client';
 
 export interface ITelegramContext {
   webApp?: IWebApp;

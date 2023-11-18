@@ -16,7 +16,6 @@ const Header = () => {
   const { user } = useTelegram();
   const [modal, setModal] = useState(false);
   const [wallet, setWallet] = useAtom(generatedUserWallet);
-  const [isUsingGeneratedWallet, setIsUsingGeneratedWallet] = useState(false);
 
   const { address, isConnecting, isDisconnected } = useAccount();
 
@@ -27,26 +26,39 @@ const Header = () => {
     }
   }, [user]);
 
+  useEffect(() => {
+    console.log('FONUZZF', wallet);
+  }, [wallet]);
+
+  const handleGeneratedWallet = async () => {
+    if (user?.id) {
+      const telegramUserWallet = await getUserWallet(user?.id);
+      setWallet(telegramUserWallet);
+    }
+    setModal(false);
+  };
+
   return (
     <div className='p-4 flex items-center justify-between bg-slate-800'>
       <Image
-        src={`${address ? `https://noun-api.com/beta/pfp?name=${address}`: 'https://noun-api.com/beta/pfp'}`}
+        src='https://noun-api.com/beta/pfp'
         alt='logo'
         width={50}
         height={50}
         className='rounded-full'
       />
-      {address ? (
-        <Web3Button />
-      ) : wallet?.publicKey && isUsingGeneratedWallet ? (
+
+      {!address && !wallet?.publicKey && (
+        <Button onClick={() => setModal(!modal)}>Connect Wallet</Button>
+      )}
+      {address && <Web3Button />}
+      {wallet?.publicKey && (
         <Button onClick={() => setModal(!modal)}>
           {shortenAddress(wallet.publicKey)}
         </Button>
-      ) : (
-        <Button onClick={() => setModal(!modal)}>Connect Wallet</Button>
       )}
 
-      {modal && !isUsingGeneratedWallet && (
+      {modal && !wallet?.publicKey && (
         <>
           <div
             className='absolute items-center bg-black/30 w-full h-screen top-0 left-0'
@@ -56,33 +68,20 @@ const Header = () => {
             className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
              flex flex-col items-center rounded-lg bg-white p-4 text-black'
           >
-            <div
-              onClick={() => {
-                setIsUsingGeneratedWallet(false);
-                setModal(false);
-              }}
-            >
+            <div onClick={() => setModal(false)}>
               <Web3Button />
             </div>
             <span className='my-4 font-bold'>Or</span>
-
             <button
               className='bg-blue-400 font-bold text-white rounded-xl px-4 py-2'
-              onClick={async () => {
-                if (user?.id) {
-                  const telegramUserWallet = await getUserWallet(user?.id);
-                  setWallet(telegramUserWallet);
-                }
-                setIsUsingGeneratedWallet(true);
-                setModal(false);
-              }}
+              onClick={() => handleGeneratedWallet()}
             >
               Generated wallet
             </button>
           </div>
         </>
       )}
-      {modal && isUsingGeneratedWallet && (
+      {modal && wallet?.publicKey && (
         <div
           className='absolute items-center bg-black/30 w-full h-screen top-0 left-0'
           onClick={() => setModal(false)}
@@ -94,7 +93,7 @@ const Header = () => {
             <button
               className='bg-blue-400 font-bold text-white rounded-xl px-4 py-2'
               onClick={async () => {
-                setIsUsingGeneratedWallet(false);
+                setWallet(null);
                 setModal(false);
               }}
             >

@@ -1,8 +1,8 @@
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { EthereumProvider } from '@cowprotocol/widget-lib';
 
-import { useAccount, useConfig, useWalletClient, useConnect } from 'wagmi';
+import { useAccount, useConnect } from 'wagmi';
 
 import EventEmitter from 'events';
 
