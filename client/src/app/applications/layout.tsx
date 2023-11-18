@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Footer, IsOnTelegram } from '@/components';
+import { Header, MenuBar } from '@/components/applications';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +15,11 @@ export default function RootLayout({
   return (
     <div>
       {/* <IsOnTelegram> */}
-      {children}
+      <section className='bg-gradient-2 text-white'>
+        <Header />
+        <div className='flex flex-col bg-gradient p-4 mb-20'>{children}</div>
+        <MenuBar />
+      </section>
       {/* </IsOnTelegram> */}
     </div>
   );
