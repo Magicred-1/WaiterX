@@ -8,18 +8,22 @@ import { Web3Button } from '@web3modal/react';
 
 import { useAccount } from 'wagmi';
 import { addUser } from '@/lib/wallet.action';
+import { useAtom } from 'jotai';
+import { generatedUserWallet } from '@/lib/context';
 
 const Header = () => {
   const { user } = useTelegram();
   const [modal, setModal] = useState(false);
+  const [wallet, setWallet] = useAtom(generatedUserWallet);
 
   const { address, isConnecting, isDisconnected } = useAccount();
 
-  // useEffect(() => {
-  //   if (user) {
-  //     const user = addUser(user);
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    if (user) {
+      const getUser = addUser(user);
+      console.log(getUser);
+    }
+  }, [user]);
 
   return (
     <div className='p-4 flex items-center justify-between bg-slate-800'>
@@ -46,12 +50,17 @@ const Header = () => {
             className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
              flex flex-col items-center rounded-lg bg-white p-4 text-black'
           >
-            <Web3Button />
+            <div onClick={() => setModal(false)}>
+              <Web3Button />
+            </div>
             <span className='my-4 font-bold'>Or</span>
 
             <button
               className='bg-blue-400 font-bold text-white rounded-xl px-4 py-2'
-              onClick={() => {}}
+              onClick={() => {
+                setModal(false);
+                // setWallet();
+              }}
             >
               Generate wallet
             </button>
