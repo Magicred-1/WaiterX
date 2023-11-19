@@ -14,13 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <div>
-      <IsOnTelegram>
-        <section className='bg-gradient-2 text-white'>
-          <Header />
-          <div className='flex flex-col bg-gradient p-4 mb-20'>{children}</div>
-          <MenuBar />
-        </section>
-      </IsOnTelegram>
+      {/* <IsOnTelegram> */}
+      <section className='bg-gradient-2 text-white'>
+        <Header />
+        <div className='flex flex-col bg-gradient p-4 mb-20'>{children}</div>
+        <MenuBar />
+      </section>
+      {/* </IsOnTelegram> */}
     </div>
   );
 }
