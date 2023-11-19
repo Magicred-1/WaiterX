@@ -6,7 +6,7 @@ const page = () => {
       <iframe
         src='https://waiter-x-hyperlane.vercel.app/'
         width='95%'
-        height='300px'
+        height='400px'
         className='rounded-3xl bg-transparent'
         style={{ border: 'none' }}
       >
