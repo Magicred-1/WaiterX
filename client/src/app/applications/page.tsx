@@ -22,7 +22,7 @@ const page = async () => {
         </h1>
         <div className='h-[2px] w-3/5 bg-white mt-1' />
         <div className='grid grid-cols-2 gap-4 mt-4'>
-          <Card title='Transfer fund' image='/arrow-icon.png' path=''/>
+          <Card title='Transfer fund' image='/arrow-icon.png' path='/applications/transfer'/>
           <Card title='Donation' image='/bourse-icon.png' path=''/>
           <Card title='Auction' image='/courbe-icon.png' path=''/>
           <Card title='Swap' image='/profile-icon.png' path='/applications/swap'/>
