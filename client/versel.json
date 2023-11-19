@@ -1,14 +1,13 @@
 {
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "X-Frame-Options",
-            "value": "ALLOW-FROM waiter-x-hyperlane.vercel.app"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOW-FROM waiter-x-hyperlane.vercel.app"
+        }
+      ]
+    }
+  ]
+}
